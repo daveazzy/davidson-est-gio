@@ -1,0 +1,52 @@
+    <script>
+        function handleIsFibonacci(x){
+            if (x < 0){
+                return false;
+            }
+
+            var a = 0;
+            var b = 1;
+            var aux;
+
+            while (a <= x){
+                if (a === x){
+                    return true;
+                }
+
+                aux = a;
+                a = b;
+                b += aux;
+
+            }
+
+            return false;
+        }
+
+        function main(){
+            var num;
+
+
+            while (true){
+
+                num = prompt('Informe um número ou digite "p" para sair:');
+
+                if (num === "p"){
+                    alert("Programa encerrado.")
+                    break;
+                }
+
+                var a = parseInt(num)
+                
+                if(num === 0 || a === 1){
+                    alert('O número '+ a + ' pertence à sequência Fibonacci.')
+                }else if(handleIsFibonacci(a)){
+                    alert('O número '+ a + ' pertence à sequência Fibonacci.')
+                } else {
+                    alert('O número ' + a + ' não pertence à sequência Fibonacci.')
+                }
+            }
+        }
+
+        window.onload = main;
+    </script>
+

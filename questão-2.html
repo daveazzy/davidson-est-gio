@@ -1,0 +1,35 @@
+<script>
+    function handleCountLetterA(x) {
+        var count = 0;
+        for (var i = 0; i < x.length; i++) {
+            if (x[i] === 'a' || x[i] === 'A') {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    function main() {
+            var a;
+
+            while (true) {
+                a = prompt('Digite uma palavra ou "1" para sair:');
+
+                if (a === null) {
+                    alert('Programa encerrado.');
+                    break;
+                }
+                
+                if (a === "1") {
+                    alert('Programa encerrado.');
+                    break;
+                }
+
+                var count = handleCountLetterA(a);
+                alert('A letra "a" ou "A" ocorre ' + count + ' vezes na string.');
+            }
+        }
+
+    window.onload = main;
+</script>
